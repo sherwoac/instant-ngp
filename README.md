@@ -53,6 +53,16 @@ For Arch and derivatives,
 sudo pacman -S cuda
 ```
 
+## Conda environment
+As an alternative to the bare metal install of CUDA above, you can run with [conda](https://conda.io/projects/conda/en/latest/user-guide/install/download.html). To install the conda environment run:
+```sh
+conda env create -f ./environment.yml
+```
+this requires adding an environment variable (to `LD_LIBRARY_PATH`) with:
+```shell
+conda env config vars set LD_LIBRARY_PATH=$CONDA_PREFIX/lib:$LD_LIBRARY_PATH
+```
+*nb. you will have to reactivate the environment to use this with compilation.*
 
 ## Compilation (Windows & Linux)
 
